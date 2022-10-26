@@ -9,7 +9,9 @@ module.exports = {
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.tsx'],
+    // '.js' must be added. There are files in node_modules which use this.
+    // If '.js' is omitted, building works okay, but dev server does not work.
+    extensions: ['.tsx', '.js'],
   },
   module: {
     rules: [
